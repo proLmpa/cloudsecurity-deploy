@@ -1,0 +1,7 @@
+image:
+  repository: prolmpa/cloudsecurity-7th-8th-week
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 80

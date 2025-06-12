@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudsecurity
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudsecurity
+  template:
+    metadata:
+      labels:
+        app: cloudsecurity
+    spec:
+      containers:
+        - name: app
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: 80
